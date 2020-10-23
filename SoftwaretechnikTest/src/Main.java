@@ -7,7 +7,6 @@ public class Main {
 		System.out.println("Please insert an integer. This number defines the amount of prime numberst to be safed in the file");
 		
 		Scanner scanner = new Scanner(System.in);
-		
 		int number = scanner.nextInt(); 
 		boolean[] primeNumber = PrimeNumber.isPrime(number); 
 		
