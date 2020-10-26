@@ -6,25 +6,32 @@ public class Main {
 		
 		System.out.println("Please insert an integer. This number defines the amount of prime numberst to be safed in the file");
 		
-		Scanner scanner = new Scanner(System.in);
-		int number = scanner.nextInt(); 
-		boolean[] primeNumber = PrimeNumber.isPrime(number); 
+		Scanner _scanner = new Scanner(System.in);
+		int _numbers = _scanner.nextInt(); 
+		int[] _primeNumbers = PrimeNumber.isPrime(_numbers); 
 		
-//		for (int i = 0; i < primeNumber.length; i++) {
-//			primeNumber[i] = true; 
-//		}
-//		
-//		for (int k = 2; k <= primeNumber.length; k++) {
-//			if (primeNumber[k-1]) {
-//				System.out.println(k);
-//				
-//				for (int j = 2*k; j <= primeNumber.length; j += k) {
-//					primeNumber[j-1] = false; 
-//				}
-//			}
-//		}
 
-		scanner.close();
+		System.out.println("Do you want to set a filename? Please press y for yes and n for no. ");
+		
+		String _input = _scanner.next(); 
+		String _fileName = "Primenumbers"; 
+		switch(_input) {
+			case "y": 
+				System.out.println("please insert a filename");
+				_fileName = _scanner.next(); 
+				ToFile.makeFile(_primeNumbers, _fileName);
+				break; 
+		
+			case "n":
+				ToFile.makeFile(_primeNumbers, _fileName);
+				break; 
+				
+			default:
+				break; 
+		}
+ 
+		
+		_scanner.close();
 	}
 
 }
