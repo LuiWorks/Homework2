@@ -1,23 +1,26 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
+/**
+ * Class that safes the content of an array (array of prime numbers) into a txt file. 
+ * 
+ * Class receives a param containing an int array filled with prime numbers and a param containing a name for the txt file.
+ *
+ */
 public class ToFile {
-	
-	// junit Methoden anlegen zum testen
-	// https://www.youtube.com/watch?v=jtsHJufkDfU
-	
-	public static void makeFile(int[] _primeNumbers, String _fileName) {
 
+	public static void makeFile(int[] _primeNumbers, String _fileName) {
 		writeInFile((createFile(_fileName)) , _primeNumbers);
-		
 	}
-	
-	
-	
-	
+
+	/**
+	 * Method creating a bare txt file in the project folder.
+	 * The filename is set as desired. 
+	 * 
+	 * @param _fileName the name the file will get
+	 * @return a bare file, named as desired 
+	 */
 	public static File createFile(String _fileName) {
-		
 		File _file = null; 
 		StringBuilder _name = new StringBuilder();
 		_name.append(_fileName); 
@@ -38,6 +41,11 @@ public class ToFile {
 		return _file; 
 	}	
 
+	/**
+	 * Method that writes the content of an array into a file 
+	 * @param _file the file to be written in 
+	 * @param _primeNumbers the array containing prime numbers, will be written into the file 
+	 */
 	public static void writeInFile(File _file, int[] _primeNumbers) {
 		
 		try {
@@ -57,8 +65,6 @@ public class ToFile {
 				e.printStackTrace();
 		}
 	}
-	
-	
-	
+
 }
 

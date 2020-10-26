@@ -1,4 +1,10 @@
-
+/**
+ * Method searching for prime numbers, saves them in an int array 
+ * 
+ * Creates an boolean array and sets all values to true. The array will be expanded if there is more space needed. 
+ * The prime numbers a "sieved" with the sieve of Eratosthenes. 
+ * When the wanted number is reached the method returns the array filled with prime numbers.
+ */
 public class PrimeNumber {
 	
 	public static int[] isPrime(int number) {
